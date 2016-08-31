@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>Timeout</h1>
+	<button class="button">Button One</button>
+	<button class="button">Button Two</button>
+	<button class="button">Button Three</button>
+	<button class="button">Button Four</button>
+	<button class="button">Button Five</button>
+	<button class="button">Button Six</button>
+	<script>
+		var counter = 1000;
+		[].forEach.call(document.getElementsByClassName("button"), function(element){
+			
+			var clicked = function(){element.innerHTML = "Clicked!";}
+			
+			element.addEventListener("click", function(){ 
+				window.setTimeout(clicked, function(x){return x}(counter));
+				counter+= 1000;
+				} //close function section of event handler
+			); //close event handler
+		} //close function foreach
+		); //close call expression
+	</script>
+</body>
+</html>
